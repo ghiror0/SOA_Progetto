@@ -1,0 +1,17 @@
+-Eseguire l'istruzione "make"
+-Per creare i charDevice legati al nostro modulo occorre eseguire, come superUser, il file "init" inserendo il major number ritornato dall'inserimento del modulo
+-Eseguire "user" inserendo un minorNumber disponibile (standard (0,3])
+-Eseguire, come superUser, "changeParam" inserendo il numero del parametro da voler modificare ed il suo valore: inserire 1 per cambiare "max_message_size", inserire 2 per cambiare "max_storage_size"
+-Il comando "test" prende in input un minorNumber ed esegue 4 thread, 2 in scrittura e 2 in lettura, che eseguono un numero di scritture/letture indicato dalla variabile "TEST"
+
+
+Esempio di utilizzo:
+make
+sudo ./init "majorNumber"
+./user "minorNumber"
+
+Esempio cambio valore di parametro:
+sudo ./changeParam "numeroParametro" "nuovoValore"
+
+Extra:
+-I comandi di read/write dell'user hanno un buffer di grandezza 100, se si vuole scrivere o leggere messaggi più grandi occorre modificare la lunghezza del buffer
