@@ -1,3 +1,0 @@
-all:
-	gcc user.c -lpthread -o user
-        gcc testUser.c -lpthread -o test
