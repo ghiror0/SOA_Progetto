@@ -13,5 +13,16 @@ sudo ./init "majorNumber"
 Esempio cambio valore di parametro:
 sudo ./changeParam "numeroParametro" "nuovoValore"
 
+id parametri:
+1=max_message_size
+2=max_storage_size
+
 Extra:
 -I comandi di read/write dell'user hanno un buffer di grandezza 100, se si vuole scrivere o leggere messaggi più grandi occorre modificare la lunghezza del buffer
+
+Comandi IOCTL:
+1--> SET_SEND_TIMEOUT
+3-->SET_RECV_TIMEOUT
+5-->Rimozione scritture pendenti
+6-->Rimozione letture pendenti
+7-->Rimozione messaggi in coda
