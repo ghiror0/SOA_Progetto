@@ -1,5 +1,11 @@
 #include "defineString.c"
 
+#define MODNAME "MODULE_GANCI"
+#define DEVICE_NAME "Device_Ganci"
+
+#define get_major(session)    MAJOR(session->f_inode->i_rdev)
+#define get_minor(session)    MINOR(session->f_inode->i_rdev)
+
 #define MAX_STORAGE 10000
 #define MAX_MESSAGE 100
 
@@ -15,6 +21,9 @@
 #define EMEXSIZE -3   //Il messaggio che si vuole scrivere supera la dimensione massima consentita da MAX_MESSAGE
 #define EOUTSPACE -4  //Il numero di bytes che si vuole scrivere supera il numero di bytes liberi disponibili
 #define REVOKE -5     //L'operazione è stata revocata
+
+
+//////////////////////////////Sincronizzazione
 
 #define MUTEX 0  //se 0 utilizza spinlock, se 1 utilizza mutex
 
@@ -32,4 +41,9 @@
 #define INIT_LOCK(lock) spin_lock_init(&lock)
 #define DESTROY_LOCK(lock)
 #endif
+
+int valid_bytes;     //Numero di bytes ancora disponibili
+lock_t valid_lock;   //Lock per il cambio del valore di valid_bytes
+
+
 

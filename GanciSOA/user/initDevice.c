@@ -11,7 +11,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include "../moduleFunc/defineFile.c"
+#include "../moduleFunc/defineFIleUser.c"
 
 #define PRINT 0
 

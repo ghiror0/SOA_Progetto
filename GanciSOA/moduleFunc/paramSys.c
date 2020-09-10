@@ -1,10 +1,5 @@
-#pragma once
-
 #include <linux/moduleparam.h>
 #include <linux/sysfs.h>
-
-#include "defineFile.c"
-
 
 int max_message_size = MAX_MESSAGE;
 module_param(max_message_size,int,0644);

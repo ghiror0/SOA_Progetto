@@ -16,7 +16,7 @@
 #include <sys/ioctl.h>
 #include <pthread.h>
 
-#include "../moduleFunc/defineFile.c"
+#include "../moduleFunc/defineFIleUser.c"
 
 //Define inerenti al numero di scritture, e letture, che un thread deve eseguire ad ogni comando
 
